@@ -6,21 +6,24 @@
     <title>Random Menu Picker</title>
     <style>
         /* 设置背景图片 */
-        body {
-            font-family: '华文行楷', 'KaiTi', sans-serif; /* 使用华文行楷，如果没有则使用楷体 */
-            background: url('beijing.jpg') no-repeat center center fixed; /* 替换为你的相对路径 */
-            background-size: cover; /* 背景图像覆盖整个页面 */
-            height: 100vh; /* 设置视口高度 */
+        html, body {
+            height: 100%;
             margin: 0;
+            font-family: '华文行楷', 'KaiTi', sans-serif; /* 使用华文行楷，如果没有则使用楷体 */
+        }
+
+        body {
             display: flex; /* 使用 flexbox 布局 */
             justify-content: center; /* 水平居中 */
             align-items: center; /* 垂直居中 */
+            background: url('beijing.jpg') no-repeat center center fixed; /* 替换为你的相对路径 */
+            background-size: cover; /* 背景图像覆盖整个页面 */
         }
 
         /* 创建一个半透明的覆盖层 */
         body::before {
             content: '';
-            position: absolute;
+            position: fixed; /* 固定位置，避免影响容器 */
             top: 0;
             left: 0;
             width: 100%;
