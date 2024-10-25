@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Menu Picker</title>
     <style>
-        /* 设置背景图片和边距 */
+        /* 设置背景图片 */
         html, body {
             height: 100%;
-            margin: 0; /* 设置边距为0 */
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -36,10 +36,10 @@
             background-color: rgba(255, 255, 255, 0.85); /* 半透明白色背景 */
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            width: 100%; /* 调整宽度 */
-            max-width: 600px; /* 最大宽度 */
-            min-height: 600px; /* 最小高度 */
+            width: 800px; /* 设置固定宽度为 600px */
+            height: 400px; /* 设置固定高度为 400px */
             margin: 0 auto; /* 水平居中 */
+            overflow: auto; /* 使得内容溢出时可以滚动 */
         }
 
         h1 {
