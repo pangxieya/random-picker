@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Menu Picker</title>
     <style>
-        /* 设置背景图片和边距 */
+        /* 设置背景颜色和图像 */
         html, body {
             height: 100%;
             margin: 0; /* 设置边距为0 */
@@ -13,7 +13,7 @@
             justify-content: center;
             align-items: center;
             font-family: '华文行楷', 'KaiTi', sans-serif; /* 使用华文行楷，如果没有则使用楷体 */
-            background: url('beijing.jpg') no-repeat center center fixed; /* 替换为你的相对路径 */
+            background: linear-gradient(to bottom right, #f0f4c3, #c8e6c9); /* 渐变背景色 */
             background-size: cover; /* 背景图像覆盖整个页面 */
         }
 
@@ -25,60 +25,67 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* 黑色半透明 */
+            background-color: rgba(0, 0, 0, 0.4); /* 黑色半透明 */
             z-index: -1; /* 让它在内容下方 */
         }
 
         /* 容器样式 */
         .container {
             text-align: center;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.85); /* 半透明白色背景 */
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            width: 90%; /* 调整宽度 */
-            max-width: 1800px; /* 最大宽度 */
-            min-height: 600px; /* 最小高度 */
+            padding: 40px; /* 增加内边距 */
+            background-color: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */
+            border-radius: 20px; /* 圆角 */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* 更强的阴影 */
+            width: 90%; /* 设置为90%以占满可用宽度 */
+            max-width: 600px; /* 最大宽度 */
+            min-height: 400px; /* 最小高度 */
             margin: 0 auto; /* 水平居中 */
         }
 
         h1 {
-            font-size: 2.2em;
-            color: #333;
+            font-size: 2.5em; /* 增加标题字体大小 */
+            color: #4a148c; /* 深紫色 */
             margin-bottom: 20px;
             font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* 添加文字阴影 */
         }
 
         /* 菜单显示的文字 */
         #menu {
-            font-size: 1.8em;
-            color: #6c5b7b;
+            font-size: 2em; /* 增加字体大小 */
+            color: #3e2723; /* 深棕色 */
             margin: 20px 0;
             font-weight: 600;
             min-height: 50px;
+            transition: color 0.3s ease; /* 增加过渡效果 */
+        }
+
+        #menu:hover {
+            color: #c2185b; /* 悬停时变色 */
         }
 
         /* 按钮样式 */
         button {
-            padding: 12px 30px;
-            font-size: 1.1em;
-            background-color: #f67280;
+            padding: 15px 35px; /* 增加内边距 */
+            font-size: 1.2em; /* 增加字体大小 */
+            background-color: #f06292; /* 粉色 */
             color: white;
             border: none;
             border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 添加阴影 */
         }
 
         button:hover {
-            background-color: #c06c84;
+            background-color: #ec407a; /* 悬停时变深色 */
             transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* 悬停时增强阴影 */
         }
 
         button:active {
             transform: translateY(2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* 点击时减弱阴影 */
         }
     </style>
 </head>
