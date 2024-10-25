@@ -10,20 +10,21 @@
             height: 100%;
             margin: 0;
             font-family: '华文行楷', 'KaiTi', sans-serif; /* 使用华文行楷，如果没有则使用楷体 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         body {
-            display: flex; /* 使用 flexbox 布局 */
-            justify-content: center; /* 水平居中 */
-            align-items: center; /* 垂直居中 */
             background: url('beijing.jpg') no-repeat center center fixed; /* 替换为你的相对路径 */
             background-size: cover; /* 背景图像覆盖整个页面 */
+            position: relative; /* 允许后面创建的覆盖层生效 */
         }
 
         /* 创建一个半透明的覆盖层 */
         body::before {
             content: '';
-            position: fixed; /* 固定位置，避免影响容器 */
+            position: fixed; /* 固定位置，覆盖整个页面 */
             top: 0;
             left: 0;
             width: 100%;
@@ -42,6 +43,7 @@
             width: 90%;
             max-width: 600px; /* 调整宽度 */
             min-height: 300px; /* 最小高度 */
+            z-index: 1; /* 确保容器内容显示在遮罩层上方 */
         }
 
         h1 {
