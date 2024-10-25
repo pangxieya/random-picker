@@ -12,6 +12,9 @@
             background-size: cover; /* 背景图像覆盖整个页面 */
             height: 100vh; /* 设置视口高度 */
             margin: 0;
+            display: flex; /* 使用 flexbox 布局 */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
         }
 
         /* 创建一个半透明的覆盖层 */
@@ -29,16 +32,17 @@
         /* 容器样式 */
         .container {
             text-align: center;
-            padding: 30px;
+            padding: 40px;
             background-color: rgba(255, 255, 255, 0.85); /* 半透明白色背景 */
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 500px;
+            border-radius: 20px; /* 圆角边框 */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+            width: 90%;
+            max-width: 600px; /* 调整宽度 */
+            min-height: 300px; /* 最小高度 */
         }
 
         h1 {
-            font-size: 2.2em;
+            font-size: 2.5em;
             color: #333;
             margin-bottom: 20px;
             font-weight: bold;
@@ -46,17 +50,17 @@
 
         /* 菜单显示的文字 */
         #menu {
-            font-size: 1.8em;
+            font-size: 2em;
             color: #6c5b7b;
             margin: 20px 0;
             font-weight: 600;
-            min-height: 50px;
+            min-height: 60px;
         }
 
         /* 按钮样式 */
         button {
-            padding: 12px 30px;
-            font-size: 1.1em;
+            padding: 15px 40px;
+            font-size: 1.2em;
             background-color: #f67280;
             color: white;
             border: none;
