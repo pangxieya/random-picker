@@ -13,7 +13,7 @@
             justify-content: center;
             align-items: center;
             font-family: '华文行楷', 'KaiTi', sans-serif; /* 使用华文行楷，如果没有则使用楷体 */
-            background: url('back.jpg') no-repeat center center fixed; /* 替换为你的相对路径 */
+            background: url('beijing.jpg') no-repeat center center fixed; /* 替换为你的相对路径 */
             background-size: cover; /* 背景图像覆盖整个页面 */
         }
 
@@ -40,7 +40,7 @@
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             width: 800px; /* 直接指定宽度为 800px */
-            height: 400px; /* 直接指定高度为 600px */
+            height: 600px; /* 直接指定高度为 600px */
             margin: 0 auto; /* 水平居中 */
             overflow: auto; /* 使得内容溢出时可以滚动 */
         }
@@ -59,6 +59,13 @@
             margin: 20px 0;
             font-weight: 600;
             min-height: 50px;
+        }
+
+        /* 图片样式 */
+        #menu-image {
+            width: 300px; /* 设置图片宽度 */
+            height: auto; /* 高度自适应 */
+            margin-bottom: 20px; /* 图片与文本之间的间距 */
         }
 
         /* 按钮样式 */
@@ -88,36 +95,40 @@
 <body>
     <div class="container">
         <h1>关于填饱肚子这件事</h1>
+        <img id="menu-image" src="" alt="Menu Image" style="display:none;"> <!-- 图片初始隐藏 -->
         <div id="menu">快快显灵</div>
         <button onclick="pickMenu()">揭晓答案</button>
     </div>
 
     <script>
-        // 定义菜单选项
+        // 定义菜单选项和对应的图片
         const menuItems = [
-            "鸡公煲",
-            "醉面"
-            "凉皮肉夹馍",
-            "犟骨头",
-            "梨花汤饭",
-            "肠粉",
-            "滑蛋饭"
-            "袁记水饺",
-            "超意兴",
-            "螺蛳粉",
-            "煎饼果子",
-            "面条",
-            "外面包子",
-            "楼下包子",
-            "煎饼果子",
-            "麻辣烫"
+            { name: "鸡公煲", image: "鸡公煲.jpg" },
+            { name: "醉面", image: "醉面.jpg" },
+            { name: "凉皮肉夹馍", image: "凉皮肉夹馍.jpg" },
+            { name: "犟骨头", image: "犟骨头.jpg" },
+            { name: "梨花汤饭", image: "梨花汤饭.jpg" },
+            { name: "肠粉", image: "肠粉.jpg" },
+            { name: "滑蛋饭", image: "滑蛋饭.jpg" },
+            { name: "袁记水饺", image: "袁记水饺.jpg" },
+            { name: "超意兴", image: "超意兴.jpg" },
+            { name: "螺蛳粉", image: "螺蛳粉.jpg" },
+            { name: "煎饼果子", image: "煎饼果子.jpg" },
+            { name: "面条", image: "面条.jpg" },
+            { name: "外面包子", image: "外面包子.jpg" },
+            { name: "楼下包子", image: "楼下包子.jpg" },
+            { name: "煎饼果子", image: "煎饼果子.jpg" },
+            { name: "麻辣烫", image: "麻辣烫.jpg" },
         ];
 
         // 随机选择菜单项的函数
         function pickMenu() {
             const randomIndex = Math.floor(Math.random() * menuItems.length);
             const selectedMenu = menuItems[randomIndex];
-            document.getElementById("menu").innerText = "今日份饭饭: " + selectedMenu;
+            document.getElementById("menu").innerText = "今日份饭饭: " + selectedMenu.name;
+            const imgElement = document.getElementById("menu-image");
+            imgElement.src = selectedMenu.image; // 设置图片源
+            imgElement.style.display = "block"; // 显示图片
         }
     </script>
 </body>
